@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684163195278" clover="3.2.0">
+  <project timestamp="1684163195278" name="All files">
+    <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0" elements="5" coveredelements="0" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
+    <file name="Login.js" path="C:\Users\OKAY-QA\OneDrive\Рабочий стол\My\allprojects\puppeteer_tests_cv\package_for_tests\Login.js">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
