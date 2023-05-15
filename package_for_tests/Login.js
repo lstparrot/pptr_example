@@ -1,15 +1,22 @@
+const { initBrowser, getBrowser } = require('../puppeteerInstance');
+
+
+
 
 export default class Login {
 
-
+    constructor (page){
+    this.page = page
+    
+    }
 
     async visit(){
-        await page.goto("https://my.whisk.com/")
+        await this.page.goto("https://my.whisk.com/")
     }
 
     async feelform(){
-        await page.waitForSelector('*[@id="app"]/div[1]/nav[2]/button/div/div')
-        await page.click('*[@id="app"]/div[1]/nav[2]/button/div/div')
+        await this.page.waitForSelector('#app > div.s11739 > nav.s11742 > button > div > div')
+        await this.page.click('#app > div.s11739 > nav.s11742 > button > div > div')
     }
 
 }

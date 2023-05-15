@@ -1,21 +1,29 @@
 import Login from '../package_for_tests/Login'
 
 
+const { initBrowser, getBrowser } = require('../puppeteerInstance');
+
 describe('END-to-END', ()=>{
 
     let login;
-
+    let page;
 
     beforeAll(async ()=>{
-        jest.setTimeout(() => {
-        }, 20000);
-        login = new Login()
+        await initBrowser();
+        const browser = getBrowser();
+        page = await browser.newPage();
     
+        login = new Login(page)
+    })
+
+    afterAll(async () => {
+        const browser = getBrowser();
+        await browser.close();
     })
 
 
     test('Login', async()=>{
-        login.visit()
-        login.feelform()
+        await login.visit()
+        await login.feelform()
     })
 })
