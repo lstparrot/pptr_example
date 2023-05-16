@@ -22,7 +22,7 @@ describe('END-to-END', ()=>{
     })
 
 
-    test('Login', async()=>{
+    test('LoginaAsNewUser', async()=>{
         await login.visit()
         await login.feelform()
     })
