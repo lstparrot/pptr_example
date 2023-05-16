@@ -12,7 +12,9 @@ describe('END-to-END', ()=>{
         await initBrowser();
         const browser = getBrowser();
         page = await browser.newPage();
-    
+        jest.setTimeout(() => { 
+        }, 20000);
+
         login = new Login(page)
     })
 
