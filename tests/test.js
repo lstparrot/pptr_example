@@ -5,21 +5,20 @@ const { initBrowser, getBrowser } = require('../puppeteerInstance');
 
 describe('END-to-END', ()=>{
 
-    let login;
-    let page;
+    let login
+    let page
+
+
 
     beforeAll(async ()=>{
         await initBrowser()
-        const browser = getBrowser()
-        //const context = await browser.createIncognitoBrowserContext()
-        //page = await context.newPage()
+        const browser = initBrowser();
         page = await browser.newPage()
-
         login = new Login(page)
     })
 
     afterAll(async () => {
-        const browser = getBrowser();
+        const browser = initBrowser();
         await browser.close();
     })
 
