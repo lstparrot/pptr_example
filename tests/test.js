@@ -1,6 +1,5 @@
 import Login from '../package_for_tests/Login'
 
-
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
 
 describe('END-to-END', ()=>{
@@ -9,17 +8,14 @@ describe('END-to-END', ()=>{
     let page
 
 
-
-    beforeAll(async ()=>{
-        await initBrowser()
-        const browser = initBrowser();
-        page = await browser.newPage()
-        login = new Login(page)
+    beforeAll(async () => {
+        await initBrowser();
+        page = await getBrowser().newPage();
+        login = new Login(page);
     })
 
     afterAll(async () => {
-        const browser = initBrowser();
-        await browser.close();
+        await getBrowser().close();
     })
 
 

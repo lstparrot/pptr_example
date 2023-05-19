@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
 
 let browser;
-let page;
 
 
 
@@ -12,7 +11,6 @@ const initBrowser = async () => {
   });
 };
 
-//const getBrowser = () => browser;
+const getBrowser = () => browser;
 
-module.exports = { initBrowser };
-
+module.exports = { initBrowser, getBrowser };
