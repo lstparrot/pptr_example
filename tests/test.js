@@ -5,15 +5,24 @@ const { initBrowser, getBrowser } = require('../puppeteerInstance');
 describe('END-to-END', ()=>{
 
     let login
-    let page
 
 
     beforeAll(async () => {
         await initBrowser();
-        page = await getBrowser().newPage();
+        //page = await getBrowser().newPage();
+        const context = await getBrowser().createIncognitoBrowserContext();
+        const page = await context.newPage();
+        await page.setCacheEnabled(false)
         login = new Login(page);
     })
+   /* beforeEach(async ()=>{
+        login = new Login(page);
 
+       page = await getBrowser().newPage()
+    })
+    afterEach(async()=>{
+        await page.close()
+    })*/
     afterAll(async () => {
         await getBrowser().close();
     })
@@ -24,4 +33,8 @@ describe('END-to-END', ()=>{
         await login.feelform()
     }, 20000)
 
+    test('LoginaAsNewUser', async()=>{
+        await login.visit()
+        await login.feelform()
+    }, 20000)
 })
