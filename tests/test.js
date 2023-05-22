@@ -1,40 +1,54 @@
 import Login from '../package_for_tests/Login'
+import HomeFeed from '../package_for_tests/HomeFeed'
+
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
 
 describe('END-to-END', ()=>{
 
     let login
+    let homefeed
+    let page
+    let context
 
 
     beforeAll(async () => {
         await initBrowser();
         //page = await getBrowser().newPage();
-        const context = await getBrowser().createIncognitoBrowserContext();
-        const page = await context.newPage();
+        //context = await getBrowser().createIncognitoBrowserContext();
+        //page = await context.newPage();
+        //await page.setCacheEnabled(false)
+        //login = new Login(page);
+        //homefeed = new HomeFeed(page);
+    })
+
+    beforeEach(async ()=> {
+        context = await getBrowser().createIncognitoBrowserContext();
+        page = await context.newPage();
         await page.setCacheEnabled(false)
         login = new Login(page);
+        homefeed = new HomeFeed(page);
     })
-   /* beforeEach(async ()=>{
-        login = new Login(page);
-
-       page = await getBrowser().newPage()
-    })
-    afterEach(async()=>{
+    
+    afterEach(async ()=> {
         await page.close()
-    })*/
+    })
+
+
     afterAll(async () => {
         await getBrowser().close();
     })
 
 
-    test('LoginaAsNewUser', async()=>{
+    it('Login', async()=>{
         await login.visit()
         await login.feelform()
     }, 20000)
 
-    test('LoginaAsNewUser', async()=>{
+    it('Home Feed page view', async()=>{
         await login.visit()
         await login.feelform()
+        await homefeed.homefeedredirect()
     }, 20000)
+
 })
