@@ -14,12 +14,6 @@ describe('END-to-END', ()=>{
 
     beforeAll(async () => {
         await initBrowser();
-        //page = await getBrowser().newPage();
-        //context = await getBrowser().createIncognitoBrowserContext();
-        //page = await context.newPage();
-        //await page.setCacheEnabled(false)
-        //login = new Login(page);
-        //homefeed = new HomeFeed(page);
     })
 
     beforeEach(async ()=> {

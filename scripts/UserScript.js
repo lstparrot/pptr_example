@@ -1,8 +1,7 @@
-export default class LoginScript{
 
-async generateRandomEmail() {
+export function generateRandomEmail() {
     const chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-    email = '';
+    let email = '';
     for (let i = 0; i < 10; i++) {
       const randomIndex = Math.floor(Math.random() * chars.length);
       email += chars[randomIndex];
@@ -10,4 +9,3 @@ async generateRandomEmail() {
     email += '@gmail.com';
     return email;
   }
-}
