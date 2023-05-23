@@ -39,16 +39,20 @@ describe('END-to-END', ()=>{
         await getBrowser().close();
     })
 
-
-    it('Login', async()=>{
+    it('LoginAsNew', async()=>{
         await login.visit()
-        await login.feelform()
+        await login.feelformnew()
     }, 30000)
 
-    it('Home Feed page view', async()=>{
+    it('LoginAsOld', async()=>{
         await login.visit()
-        await login.feelform()
-        await homefeed.homefeedredirect()
+        await login.feelformold()
+    }, 30000)
+
+    it('Home Feed post create', async()=>{
+        await login.visit()
+        await login.feelformold()
+        await homefeed.homefeedpostcreate()
     }, 30000)
 
 })

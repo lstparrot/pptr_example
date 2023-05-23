@@ -3,7 +3,7 @@ export default class HomeFeed {
       this.page = page;
     }
   
-    async homefeedredirect() {
+    async homefeedpostcreate() {
         await this.page.waitForSelector("div.navtab.s11351.s11352[data-testid='home-nav-link']");
         await this.page.waitForTimeout(2000)
         await this.page.click("div.navtab.s11351.s11352[data-testid='home-nav-link']");
@@ -15,7 +15,7 @@ export default class HomeFeed {
         await this.page.waitForSelector('div.s11253.s256');
         await this.page.waitForTimeout(2000)
         await this.page.click('div.s11253.s256');
-
+        await this.page.waitForSelector("div.s11316.s11317[data-testid='6ba614ad-462f-714f-65b5-5c1f99689c37']");
     }
 
 
