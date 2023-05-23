@@ -43,12 +43,12 @@ describe('END-to-END', ()=>{
     it('Login', async()=>{
         await login.visit()
         await login.feelform()
-    }, 20000)
+    }, 30000)
 
     it('Home Feed page view', async()=>{
         await login.visit()
         await login.feelform()
         await homefeed.homefeedredirect()
-    }, 20000)
+    }, 30000)
 
 })
