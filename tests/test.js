@@ -35,18 +35,31 @@ describe('END-to-END', ()=>{
 
     it('LoginAsNew', async()=>{
         await login.visit()
-        await login.feelformnew()
-    }, 30000)
+        await login.feelformnewuser()
+    }, 20000)
 
     it('LoginAsOld', async()=>{
         await login.visit()
-        await login.feelformold()
-    }, 30000)
+        await login.feelformolduser()
+    }, 20000)
+
+    it('LoginGoogle', async()=>{
+        
+    }, 20000)
+
+    it('LoginFacebook', async()=>{
+        
+    }, 20000)
+
+    it('LoginButtonSecond', async()=>{
+        await login.visit()
+        await login.loginbuttonsecond()
+    }, 20000)
 
     it('Home Feed post create', async()=>{
         await login.visit()
-        await login.feelformold()
+        await login.feelformolduser()
         await homefeed.homefeedpostcreate()
-    }, 30000)
+    }, 20000)
 
 })
