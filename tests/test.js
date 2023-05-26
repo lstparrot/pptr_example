@@ -44,14 +44,16 @@ describe('END-to-END', ()=>{
     }, 20000)
 
     it('LoginGoogle', async()=>{
-        
+        await login.visit()
+        await login.logingoogle()
     }, 20000)
 
     it('LoginFacebook', async()=>{
-        
+        await login.visit()
+        await login.loginfacebook()
     }, 20000)
 
-    it('LoginButtonSecond', async()=>{
+    /it('LoginButtonSecond', async()=>{
         await login.visit()
         await login.loginbuttonsecond()
     }, 20000)
