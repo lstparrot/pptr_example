@@ -32,8 +32,8 @@ describe('END-to-END', ()=>{
     afterAll(async () => {
         await getBrowser().close();
     })
-
-    /*it('LoginAsNew', async()=>{
+/*
+    it('LoginAsNew', async()=>{
         await login.visit()
         await login.feelformnewuser()
     }, 20000)
@@ -42,12 +42,12 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
     }, 20000)
-
+*/
     it('LoginGoogle', async()=>{
         await login.visit()
         await login.logingoogle()
     }, 20000)
-
+/*
     it('LoginFacebook', async()=>{
         await login.visit()
         await login.loginfacebook()
@@ -62,15 +62,15 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.homefeedpostcreate()
-    }, 20000)*/
+    }, 20000)
 
     it('Home Feed post create with Photo', async()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.posteditphoto()
-    }, 20000)
+    }, 40000)
 
-    /*it('Home Feed post create with Recipe', async()=>{
+    it('Home Feed post create with Recipe', async()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.posteditrecipe()
