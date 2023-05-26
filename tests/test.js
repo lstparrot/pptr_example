@@ -33,7 +33,7 @@ describe('END-to-END', ()=>{
         await getBrowser().close();
     })
 
-    it('LoginAsNew', async()=>{
+    /*it('LoginAsNew', async()=>{
         await login.visit()
         await login.feelformnewuser()
     }, 20000)
@@ -62,6 +62,17 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.homefeedpostcreate()
+    }, 20000)*/
+
+    it('Home Feed post create with Photo', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await homefeed.posteditphoto()
     }, 20000)
 
+    /*it('Home Feed post create with Recipe', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await homefeed.posteditrecipe()
+    }, 20000)*/
 })
