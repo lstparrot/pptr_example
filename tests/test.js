@@ -39,82 +39,83 @@ describe('END-to-END', ()=>{
         await getBrowser().close();
     })
 /*
-    it('LoginAsNew', async()=>{
+    it('LoginAsNew #1', async()=>{
         await login.visit()
         await login.feelformnewuser()
     }, 20000)
 
-    it('LoginAsOld', async()=>{
+    it('LoginAsOld #2', async()=>{
         await login.visit()
         await login.feelformolduser()
     }, 20000)
 
-    it('LoginGoogle', async()=>{
+    it('LoginGoogle #3', async()=>{
         await login.visit()
         await login.logingoogle()
     }, 20000)
 
-    it('LoginFacebook', async()=>{
+    it('LoginFacebook #4', async()=>{
         await login.visit()
         await login.loginfacebook()
     }, 20000)
 
-    /it('LoginButtonSecond', async()=>{
+    /it('LoginButtonSecond #5', async()=>{
         await login.visit()
         await login.loginbuttonsecond()
     }, 20000)
 
-    it('Home Feed post create', async()=>{
+    it('Home Feed post create #6', async()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.homefeedpostcreate()
     }, 20000)
 
-    it('Home Feed post create with Photo', async()=>{
+    it('Home Feed post create with Photo #7', async()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.posteditphoto()
     }, 40000)
 
-    it('Home Feed post create with Recipe', async()=>{
+    it('Home Feed post create with Recipe #8', async()=>{
         await login.visit()
         await login.feelformolduser()
         await homefeed.posteditrecipe()
     }, 20000)
 
-    it('Search field test', async()=>{
+    it('Search field test #9', async()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestfirst()
     }, 20000)
 
-    it('Search result test', async()=>{
+    it('Search result test #10', async()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestsecond()
     }, 20000)
 
-    it('Search list result test', async()=>{
+    it('Search list result test #11', async()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestresultlist()
     }, 20000)
 
-    it('Communities user check', async()=>{
+    it('Communities user check #12', async()=>{
         await login.visit()
         await login.feelformolduser()
         await communities.communitiesfirst()
     }, 20000)
 
-    it('New communities create', async()=>{
+    it('New communities create #13', async()=>{
         await login.visit()
         await login.feelformolduser()
         await communities.newcommcreate() 
     }, 20000)*/
 
-    it('Communities join', async()=>{
+    it('Communities join #14', async()=>{
         await login.visit()
         await login.feelformolduser()
-        await communities.communitiesjoin()
+        const result = await communities.communitiesjoin()
+        expect(result).toBe(true)
     }, 30000)
 })

@@ -21,30 +21,22 @@ export default class Communities {
     }
 
     async communitiesjoin() {
-        let a
         await this.page.waitForTimeout(5000)
         await this.page.waitForSelector("a.s12235.s564[href='/communities']")
         await this.page.waitForTimeout(2000)
         await this.page.click("a.s12235.s564[href='/communities']")
         await this.page.waitForTimeout(2000)
-        const elements = await this.page.$$('a.s12145-248.s12146');
+        const elements = await this.page.$$("div.s11392 .s11395 .s11778")
         const elementCountBefore = elements.length
-        await this.page.waitForTimeout(5000)
-        await this.page.waitForSelector("[data-testid='community-join-button']:nth-child(11)")
+        await this.page.waitForTimeout(3000)
+        const elementsthree = await this.page.$$("div.s12156 [data-testid='community-join-button']")
+        await elementsthree[10].click()
         await this.page.waitForTimeout(2000)
-        await this.page.click("[data-testid='community-join-button']:nth-child(11)")
-        await this.page.waitForTimeout(2000)
-        const elementstwo = await this.page.$$('a.s12145-248.s12146');
+        const elementstwo = await this.page.$$("div.s11392 .s11395 .s11778");
         const elementCountAfter = elementstwo.length
         if (elementCountAfter === elementCountBefore + 1) {
-            a = true
-            return a
-          } if (a) {
-            return
-          } else {
-            console.log('not')
+            return true
           }
-        
-        
+        return false
     }
 }
