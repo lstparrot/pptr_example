@@ -52,12 +52,12 @@ export default class Login {
       await newPage.waitForSelector("#identifierId")
       await newPage.type("#identifierId", email.toString())
       await newPage.waitForTimeout(1000)
-      await newPage.click("#identifierNext > div > button > div.VfPpkd-RLmnJb");
+    /*await newPage.click("#identifierNext > div > button > div.VfPpkd-RLmnJb");
       await newPage.waitForSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")
       await newPage.type("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input", pass.toString())
       await newPage.waitForSelector("#passwordNext > div > button > span")
       await newPage.waitForTimeout(1000)
-      await newPage.click("#passwordNext > div > button > span");
+      await newPage.click("#passwordNext > div > button > span");*/
       }
 
     async loginfacebook() {
