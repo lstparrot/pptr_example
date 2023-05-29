@@ -1,6 +1,7 @@
 import Login from '../package_for_tests/Login'
 import HomeFeed from '../package_for_tests/HomeFeed'
 import Explore from '../package_for_tests/Explore'
+import Communities from '../package_for_tests/Communities'
 
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
@@ -12,6 +13,7 @@ describe('END-to-END', ()=>{
     let page
     let context
     let explore
+    let communities
 
 
     beforeAll(async () => {
@@ -22,9 +24,10 @@ describe('END-to-END', ()=>{
         context = await getBrowser().createIncognitoBrowserContext();
         page = await context.newPage();
         await page.setCacheEnabled(false)
-        login = new Login(page);
-        homefeed = new HomeFeed(page);
-        explore = new Explore(page);
+        login = new Login(page)
+        homefeed = new HomeFeed(page)
+        explore = new Explore(page)
+        communities = new Communities(page)
     })
     
     afterEach(async ()=> {
@@ -89,11 +92,29 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestsecond()
-    }, 20000)*/
+    }, 20000)
 
-    it('Search result test', async()=>{
+    it('Search list result test', async()=>{
         await login.visit()
         await login.feelformolduser()
-        await explore.exploretestthird()
+        await explore.exploretestresultlist()
     }, 20000)
+
+    it('Communities user check', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await communities.communitiesfirst()
+    }, 20000)
+
+    it('New communities create', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await communities.newcommcreate() 
+    }, 20000)*/
+
+    it('Communities join', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await communities.communitiesjoin()
+    }, 30000)
 })

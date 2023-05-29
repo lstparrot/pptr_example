@@ -38,4 +38,14 @@ export default class Explore {
         await this.page.waitForTimeout(1000)
     }
 
+    async exploretestresultlist() {
+        await this.page.waitForTimeout(2000)
+        const element = await this.page.$('div.s199.s264')
+        await element.hover()
+        await this.page.waitForTimeout(3000)
+        await this.page.click('button[type="button"]:nth-child(1) > a')
+        await this.page.waitForSelector("h2.s10876.s15")
+        await this.page.waitForTimeout(1000)
+    }
+
 }
