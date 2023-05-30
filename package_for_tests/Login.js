@@ -13,16 +13,17 @@ export default class Login {
     }
   
     async feelformolduser() {
+      const { emailold, passold } = credential()
       await this.page.waitForSelector('button.s110.s11232')
       await this.page.waitForTimeout(1000)
       await this.page.click('button.s110.s11232')
       await this.page.waitForSelector("div.s11307.s12523[data-testid='email-phone-number-auth-input']")
-      await this.page.type("div.s11307.s12523[data-testid='email-phone-number-auth-input']", 'anonimususertestw@test.com')
+      await this.page.type("div.s11307.s12523[data-testid='email-phone-number-auth-input']", emailold.toString())
       await this.page.waitForSelector('button.s11232.s11238')
       await this.page.waitForTimeout(1000)
       await this.page.click('button.s11232.s11238')
       await this.page.waitForSelector("#_input-2.s11300[data-testid='UI_KIT_INPUT']")
-      await this.page.type("#_input-2.s11300[data-testid='UI_KIT_INPUT']", 'test@test')
+      await this.page.type("#_input-2.s11300[data-testid='UI_KIT_INPUT']", passold.toString())
       await this.page.waitForTimeout(1000)
       await this.page.click('button.s11232.s11238.s11240.s11241-1')
       await this.page.waitForTimeout(2000)

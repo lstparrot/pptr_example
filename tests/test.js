@@ -120,15 +120,38 @@ describe('END-to-END', ()=>{
         await login.feelformolduser()
         const result = await communities.communitiesjoin()
         expect(result).toBe(true)
-    }, 30000)*/
-
-    it('Communities join #15', async()=>{
-        await login.visit()
-        await login.feelformolduser()
-        await planner.planneraddrecipe() 
     }, 30000)
 
+    it('Add recipe into MP #15', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        const result = await planner.planneraddrecipe()
+        expect(result).toBe(true) 
+    }, 30000)
 
+    it('MP Clear #16', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await planner.plannerclear()
+    }, 30000)
+
+    it('MP Sharing #17', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await planner.plannerenablesharing()
+    }, 30000)
+
+    it('MP FeedBack #18', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await planner.plannerfeedback()
+    }, 30000)
+
+    it('MP import to SL #19', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await planner.plannerimport()
+    }, 30000)*/
 
 
 
