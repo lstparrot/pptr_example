@@ -25,6 +25,10 @@ export default class Login {
       await this.page.type("#_input-2.s11300[data-testid='UI_KIT_INPUT']", 'test@test')
       await this.page.waitForTimeout(1000)
       await this.page.click('button.s11232.s11238.s11240.s11241-1')
+      await this.page.waitForTimeout(2000)
+      await this.page.waitForSelector('button.s11.s11223.s11232.s11240')
+      await this.page.waitForTimeout(1000)
+      await this.page.click('button.s11.s11223.s11232.s11240')
     }
 
     async feelformnewuser() {

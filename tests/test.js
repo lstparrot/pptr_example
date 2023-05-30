@@ -2,6 +2,7 @@ import Login from '../package_for_tests/Login'
 import HomeFeed from '../package_for_tests/HomeFeed'
 import Explore from '../package_for_tests/Explore'
 import Communities from '../package_for_tests/Communities'
+import Planner from '../package_for_tests/Planner'
 
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
@@ -14,6 +15,7 @@ describe('END-to-END', ()=>{
     let context
     let explore
     let communities
+    let planner
 
 
     beforeAll(async () => {
@@ -28,6 +30,7 @@ describe('END-to-END', ()=>{
         homefeed = new HomeFeed(page)
         explore = new Explore(page)
         communities = new Communities(page)
+        planner = new Planner(page)
     })
     
     afterEach(async ()=> {
@@ -110,12 +113,24 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await communities.newcommcreate() 
-    }, 20000)*/
+    }, 50000)
 
     it('Communities join #14', async()=>{
         await login.visit()
         await login.feelformolduser()
         const result = await communities.communitiesjoin()
         expect(result).toBe(true)
+    }, 30000)*/
+
+    it('Communities join #15', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await planner.planneraddrecipe() 
     }, 30000)
+
+
+
+
+
 })
+
