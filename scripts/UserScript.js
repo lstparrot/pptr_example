@@ -19,3 +19,12 @@ export function generateRandomEmail() {
     }
     return comname;
   }
+  export function generateRandomUserName() {
+    const chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+    let comname = '';
+    for (let i = 0; i < 10; i++) {
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      comname += chars[randomIndex];
+    }
+    return comname;
+  }

@@ -3,6 +3,8 @@ import HomeFeed from '../package_for_tests/HomeFeed'
 import Explore from '../package_for_tests/Explore'
 import Communities from '../package_for_tests/Communities'
 import Planner from '../package_for_tests/Planner'
+import ProfilePage from '../package_for_tests/ProfilePage'
+
 
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
@@ -16,6 +18,7 @@ describe('END-to-END', ()=>{
     let explore
     let communities
     let planner
+    let profilepage
 
 
     beforeAll(async () => {
@@ -31,6 +34,7 @@ describe('END-to-END', ()=>{
         explore = new Explore(page)
         communities = new Communities(page)
         planner = new Planner(page)
+        profilepage = new ProfilePage(page)
     })
     
     afterEach(async ()=> {
@@ -151,9 +155,43 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await planner.plannerimport()
-    }, 30000)*/
+    }, 30000)
 
+    it('Profile page view #20', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await profilepage.profilepageview()
+    }, 30000)
 
+    it('Profile page edit #21', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await profilepage.profileedit()
+    }, 60000)
+
+    it('Profile page edit Email #22', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await profilepage.profilepageeditemail()
+    }, 40000)
+
+    it('Profile page edit pass #23', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await profilepage.profilepageeditpass()
+    }, 50000)
+
+    it('Profile page edit region #24', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await profilepage.profilepageeditregion()
+    }, 40000)*/
+
+    it('Profile page edit region #25', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await profilepage.profilepageeditregion()
+    }, 40000)
 
 })
 
