@@ -4,6 +4,7 @@ import Explore from '../package_for_tests/Explore'
 import Communities from '../package_for_tests/Communities'
 import Planner from '../package_for_tests/Planner'
 import ProfilePage from '../package_for_tests/ProfilePage'
+import Saved from '../package_for_tests/Saved'
 
 
 
@@ -19,6 +20,7 @@ describe('END-to-END', ()=>{
     let communities
     let planner
     let profilepage
+    let saved
 
 
     beforeAll(async () => {
@@ -35,6 +37,7 @@ describe('END-to-END', ()=>{
         communities = new Communities(page)
         planner = new Planner(page)
         profilepage = new ProfilePage(page)
+        saved = new Saved(page)
     })
     
     afterEach(async ()=> {
@@ -187,10 +190,10 @@ describe('END-to-END', ()=>{
         await profilepage.profilepageeditregion()
     }, 40000)*/
 
-    it('Profile page edit region #25', async()=>{
+    it('Saved Create recipe #25', async()=>{
         await login.visit()
         await login.feelformolduser()
-        await profilepage.profilepageeditregion()
+        await saved.createrecipe()
     }, 40000)
 
 })
