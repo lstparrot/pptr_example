@@ -20,7 +20,7 @@ export default class Login {
       await this.page.click('button.s11186:nth-child(1)')
       await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
       await this.page.waitForTimeout(1000)
-      await this.page.type("[data-testid='UI_KIT_INPUT']", emailold.toString())
+      await this.page.type("[data-testid='UI_KIT_INPUT']", emailold.toString(),  { delay: 100 })
       await this.page.waitForSelector("[data-testid='auth-continue-button']")
       await this.page.waitForTimeout(1000)
       await this.page.click("[data-testid='auth-continue-button']")

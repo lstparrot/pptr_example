@@ -58,21 +58,59 @@ export default class Saved {
     }
 
     async searchrecipe() {
-      await this.page.waitForTimeout(2000)
-      await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
-      await this.page.waitForTimeout(1000)
-      await this.page.click("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(2000)
+        await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(2000)
 
-      await this.page.waitForSelector("input.s12068:nth-child(2)")
-      await this.page.waitForTimeout(1000)
-      await this.page.click("input.s12068:nth-child(2)")
-      await this.page.type("input.s12068:nth-child(2)", "test")
-      await this.page.press("input.s12068:nth-child(2)", 'Backspace')
-
-      await this.page.waitForTimeout(5000)
-
+        const elementsBefore = await this.page.$$("[data-testid='77fc4d72-81d3-d76c-ab71-8aa114e4cc8d'] .s11717[data-testid='img']")
+        await this.page.waitForTimeout(2000)
+        const elements2 = await this.page.$$("input.s12068")
+        await elements2[1].click()
+        await elements2[1].type("ysu5469jms")
+        await this.page.waitForTimeout(1000)
+        await this.page.keyboard.press('Enter')
+        await this.page.waitForTimeout(2000)
+        const elementsAfter = await this.page.$$("[data-testid='77fc4d72-81d3-d76c-ab71-8aa114e4cc8d'] .s11717[data-testid='img']")
+        if (elementsAfter !== elementsBefore) {
+          return true
+        }
+          return false
     }
+    
+    async createcollection() {
+        const namecom = generateRandomUserName()
+        await this.page.waitForTimeout(2000)
+        await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(2000)
+        const elementsBefore = await this.page.$$("[data-testid='6db6eada-0dd8-e48d-6249-9671497382f3']")
+        const elementCountBefore = elementsBefore.length
 
+        await this.page.waitForSelector("[data-testid='a06215b9-86ad-0e32-c978-0a4d937d98d4']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='a06215b9-86ad-0e32-c978-0a4d937d98d4']")
+
+        await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
+        await this.page.type("[data-testid='UI_KIT_INPUT']", namecom)
+
+        await this.page.waitForSelector("[data-testid='new-collection-add-button']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='new-collection-add-button']")
+        await this.page.waitForTimeout(2000)
+        const elementsAfter = await this.page.$$("[data-testid='6db6eada-0dd8-e48d-6249-9671497382f3']")
+        const elementCountAfter = elementsAfter.length
+
+        if (elementCountAfter === elementCountBefore +1) {
+          return true
+        }
+          return false
+        
+
+        
+    }
 
 
 }

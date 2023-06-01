@@ -194,13 +194,26 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await saved.createrecipe()
-    }, 40000)*/
+    }, 40000)
 
     it('Saved Search #26', async()=>{
         await login.visit()
         await login.feelformolduser()
-        await saved.searchrecipe()
+        const result = await saved.searchrecipe()
+        expect(result).toBe(true)
     }, 40000)
 
+    it('Saved Create Collection #27', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        const result = await saved.createcollection()
+        expect(result).toBe(true)
+    }, 40000)*/
+
+    it('Shoping List Add Item #28', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await saved.createcollection()
+    }, 40000)
 })
 
