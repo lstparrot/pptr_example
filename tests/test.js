@@ -5,8 +5,8 @@ import Communities from '../package_for_tests/Communities'
 import Planner from '../package_for_tests/Planner'
 import ProfilePage from '../package_for_tests/ProfilePage'
 import Saved from '../package_for_tests/Saved'
-
-
+import ShopingList from '../package_for_tests/ShoppingList'
+import AdsCheck from '../package_for_tests/AdsCheck'
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
 
@@ -21,6 +21,8 @@ describe('END-to-END', ()=>{
     let planner
     let profilepage
     let saved
+    let shopinglist
+    let adscheck
 
 
     beforeAll(async () => {
@@ -38,6 +40,8 @@ describe('END-to-END', ()=>{
         planner = new Planner(page)
         profilepage = new ProfilePage(page)
         saved = new Saved(page)
+        shopinglist = new ShopingList(page)
+        adscheck = new AdsCheck(page)
     })
     
     afterEach(async ()=> {
@@ -208,12 +212,40 @@ describe('END-to-END', ()=>{
         await login.feelformolduser()
         const result = await saved.createcollection()
         expect(result).toBe(true)
-    }, 40000)*/
+    }, 40000)
 
     it('Shoping List Add Item #28', async()=>{
         await login.visit()
         await login.feelformolduser()
-        await saved.createcollection()
+        const result = await shopinglist.createritem()
+        expect(result).toBe(true)
+    }, 40000)
+
+    it('Shoping List Add Item Type #29', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        const result = await shopinglist.createritemtype()
+        expect(result).toBe(true)
+    }, 40000)
+
+    it('Ads Check on MP #30', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await adscheck.adsCheckOnMp()
+        
+    }, 40000)
+
+    it('Ads Check on SL #31', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await adscheck.adsCheckOnSl()
+        
+    }, 40000)*/
+
+    it('Ads Check on HomeFeed #32', async()=>{
+        await login.visit()
+        await login.feelformnewuser()
+        await adscheck.adsCheckOnHF()
     }, 40000)
 })
 
