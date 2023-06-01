@@ -57,6 +57,21 @@ export default class Saved {
         await this.page.waitForTimeout(1000)
     }
 
+    async searchrecipe() {
+      await this.page.waitForTimeout(2000)
+      await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
+      await this.page.waitForTimeout(1000)
+      await this.page.click("[data-testid='recipe-box-nav-link']")
+
+      await this.page.waitForSelector("input.s12068:nth-child(2)")
+      await this.page.waitForTimeout(1000)
+      await this.page.click("input.s12068:nth-child(2)")
+      await this.page.type("input.s12068:nth-child(2)", "test")
+      await this.page.press("input.s12068:nth-child(2)", 'Backspace')
+
+      await this.page.waitForTimeout(5000)
+
+    }
 
 
 

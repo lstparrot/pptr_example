@@ -188,12 +188,18 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await profilepage.profilepageeditregion()
-    }, 40000)*/
+    }, 40000)
 
     it('Saved Create recipe #25', async()=>{
         await login.visit()
         await login.feelformolduser()
         await saved.createrecipe()
+    }, 40000)*/
+
+    it('Saved Search #26', async()=>{
+        await login.visit()
+        await login.feelformolduser()
+        await saved.searchrecipe()
     }, 40000)
 
 })
