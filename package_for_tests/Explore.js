@@ -48,4 +48,17 @@ export default class Explore {
         await this.page.waitForTimeout(1000)
     }
 
+    async addrecipeexplore() {
+        await this.page.waitForTimeout(3000)
+        await this.page.evaluate(() => { window.document.scrollBy(0, -window.innerHeight) })
+        await this.page.waitForTimeout(2000)
+        const elements = await this.page.$$("[data-testid='bookmark']")
+        await elements[0].click()
+        await this.page.waitForTimeout(1000)
+    }
+
+
+
+
+    
 }

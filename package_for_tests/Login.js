@@ -57,23 +57,24 @@ export default class Login {
 
     async logingoogle() {
       const { email, pass } = credential()
-      await this.page.waitForSelector('button.s110.s11232')
       await this.page.waitForTimeout(1000)
-      await this.page.click('button.s110.s11232')
+      await this.page.waitForSelector('button.s11186:nth-child(1)')
+      await this.page.waitForTimeout(1000)
+      await this.page.click('button.s11186:nth-child(1)')
       await this.page.waitForSelector("[data-testid='google']")
       await this.page.waitForTimeout(1000)
       await this.page.click("[data-testid='google']")
       const waitForWindow = new Promise(resolve => this.page.on('popup', resolve));
       const newPage = await waitForWindow;
       await newPage.waitForSelector("#identifierId")
-      await newPage.type("#identifierId", email.toString())
+      await newPage.type("#identifierId", email.toString(), { delay: 100 })
       await newPage.waitForTimeout(1000)
-    /*await newPage.click("#identifierNext > div > button > div.VfPpkd-RLmnJb");
+      await newPage.click("#identifierNext > div > button > div.VfPpkd-RLmnJb");
       await newPage.waitForSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")
-      await newPage.type("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input", pass.toString())
+      await newPage.type("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input", pass.toString(), { delay: 100 })
       await newPage.waitForSelector("#passwordNext > div > button > span")
       await newPage.waitForTimeout(1000)
-      await newPage.click("#passwordNext > div > button > span");*/
+      await newPage.click("#passwordNext > div > button > span")
       }
 
     async loginfacebook() {

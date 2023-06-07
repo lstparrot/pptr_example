@@ -94,13 +94,81 @@ export default class AdsCheck {
         await this.page.waitForSelector("[data-testid='home-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='home-nav-link']")
-        await this.page.waitForTimeout(5000)
+        await this.page.waitForTimeout(10000)
 
-        await this.page.waitForSelector("div.s12124.s185")
-        
-        await this.page.waitForTimeout(1000)
+        const evpage = await this.page.$("div.s12124.s185")
 
+
+        if (evpage !== "" && evpage !== null && evpage !== undefined) {
+            return true
+        } else {
+            return false
+        }
     }
+
+    async adsCheckOnRecipetop() {
+        await this.page.waitForTimeout(3000)
+        await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='recipe-box-nav-link']")
+
+        await this.page.waitForSelector("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']:nth-child(1)")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']:nth-child(1)")
+        
+        await this.page.waitForTimeout(10000)
+
+        const evpage = await this.page.$("#banner-logo.GoogleActiveViewElement")
+
+
+        if (evpage !== "" && evpage !== null && evpage !== undefined) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    async adsCheckOnRecipemid() {
+        await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='recipe-box-nav-link']")
+        await this.page.evaluate(() => {
+            window.scrollBy(0, window.innerHeight);
+          })
+        await this.page.waitForTimeout(10000)
+
+        const evpage = await this.page.$(".i-amphtml-fill-content.i-amphtml-replaced-content[alt='']")
+
+
+        if (evpage !== "" && evpage !== null && evpage !== undefined) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    async adsCheckOnRecipedow() {
+        await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='recipe-box-nav-link']")
+        await this.page.evaluate(() => {
+            window.scrollBy(0, window.innerHeight);
+          })
+        await this.page.waitForTimeout(10000)
+
+        const evpage = await this.page.$(".i-amphtml-fill-content.i-amphtml-replaced-content[alt='']")
+
+
+        if (evpage !== "" && evpage !== null && evpage !== undefined) {
+            return true
+        } else {
+            return false
+        }
+    }
+ 
+    
+
+
 
 
     
