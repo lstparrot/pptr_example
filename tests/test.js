@@ -248,10 +248,11 @@ describe('END-to-END', ()=>{
         const result = await adscheck.adsCheckOnHF()
         expect(result).toBe(true)
     }, 40000)*/
-/*
+
     it('Ads Check on Recipe page #1 #33', async()=>{
         await login.visit()
         await login.feelformnewuser()
+        await explore.addrecipeexplore()
         const result = await adscheck.adsCheckOnRecipetop()
         expect(result).toBe(true)
     }, 40000)
@@ -268,7 +269,7 @@ describe('END-to-END', ()=>{
         await login.feelformnewuser()
         const result = await adscheck.adsCheckOnRecipedow()
         expect(result).toBe(true)
-    }, 40000)*/
+    }, 40000)
 
     it('Add Recipe Explore #36', async()=>{
         await login.visit()

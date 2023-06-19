@@ -39,9 +39,9 @@ export default class Login {
     async feelformnewuser() {
       const email = generateRandomEmail()
       await this.page.waitForTimeout(1000)
-      await this.page.waitForSelector('button.s11186:nth-child(1)')
+      await this.page.waitForSelector('button.s11189:nth-child(1)')
       await this.page.waitForTimeout(1000)
-      await this.page.click('button.s11186:nth-child(1)')
+      await this.page.click('button.s11189:nth-child(1)')
       await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
       await this.page.waitForTimeout(1000)
       await this.page.type("[data-testid='UI_KIT_INPUT']", email.toString(),  { delay: 100 })
