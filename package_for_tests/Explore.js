@@ -51,12 +51,7 @@ export default class Explore {
     async addrecipeexplore() {
         await this.page.waitForTimeout(2000)
 
-        await this.page.evaluate(() => {
-            window.scrollTo(0, 0)
-          });
-
-        //const ele = await this.page.waitForSelector("[data-testid='bookmark']")
-        //await this.page.evaluate((Pageitem)=>Pageitem.scrollIntoView(),ele)
+        
 /*
         const elements = await this.page.$$("[data-testid='bookmark']")
         await elements[0].click()
