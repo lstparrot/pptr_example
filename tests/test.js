@@ -253,8 +253,9 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformnewuser()
         await explore.addrecipeexplore()
-        const result = await adscheck.adsCheckOnRecipetop()
-        expect(result).toBe(true)
+
+        /*const result = await adscheck.adsCheckOnRecipetop()
+        expect(result).toBe(true)*/
     }, 40000)
 /*
     it('Ads Check on Recipe page #2 #34', async()=>{

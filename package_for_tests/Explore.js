@@ -48,10 +48,11 @@ export default class Explore {
         await this.page.waitForTimeout(1000)
     }
 
-    async addrecipeexplore() {
+        addrecipeexplore = async () => {
         await this.page.waitForTimeout(2000)
-
         
+        const testfunc = (a) => a
+        const content = await this.page.evaluate(testfunc, 10);
 /*
         const elements = await this.page.$$("[data-testid='bookmark']")
         await elements[0].click()
