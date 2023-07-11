@@ -8,15 +8,14 @@ export default class ProfilePage {
     }
 
     async profilepageview() {
-        await this.page.waitForTimeout(3000)
-        await this.page.waitForSelector("button.s11.s12237")
+        await this.page.waitForTimeout(2000)
+        await this.page.waitForSelector("[data-testid='avatar-button']")
         await this.page.waitForTimeout(1000)
-        await this.page.click("button.s11.s12237")
+        await this.page.click("[data-testid='avatar-button']")
         await this.page.waitForSelector("[data-testid='9a9a9b7c-3afe-4aad-b849-a35f49d219e5']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='9a9a9b7c-3afe-4aad-b849-a35f49d219e5']")
         await this.page.waitForTimeout(1000)
-        await this.page.waitForSelector("[data-testid='c39d5a49-a684-4371-99aa-589ccf4a76df']")
     }
 
     async profileedit() {

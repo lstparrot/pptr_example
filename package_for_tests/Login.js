@@ -15,9 +15,9 @@ export default class Login {
     async feelformolduser() {
       const { emailold, passold } = credential()
       await this.page.waitForTimeout(1000)
-      await this.page.waitForSelector('button.s11186:nth-child(1)')
+      await this.page.waitForSelector('button.s111:nth-child(1)')
       await this.page.waitForTimeout(1000)
-      await this.page.click('button.s11186:nth-child(1)')
+      await this.page.click('button.s111:nth-child(1)')
       await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
       await this.page.waitForTimeout(1000)
       await this.page.type("[data-testid='UI_KIT_INPUT']", emailold.toString(),  { delay: 100 })
@@ -30,18 +30,17 @@ export default class Login {
       await this.page.waitForSelector("[data-testid='auth-login-button']")
       await this.page.waitForTimeout(1000)
       await this.page.click("[data-testid='auth-login-button']")
-      await this.page.waitForTimeout(2000)
-      await this.page.waitForSelector('button.s11186.s11194')
-      await this.page.waitForTimeout(1000)
-      await this.page.click('button.s11186.s11194')
+      await this.page.waitForTimeout(4000)
+      const elements = await this.page.$$("button.s11200")
+      await elements[2].click()
     }
 
-    async feelformnewuser() {
+    async feelformnewusercookie() {
       const email = generateRandomEmail()
       await this.page.waitForTimeout(1000)
-      await this.page.waitForSelector('button.s11189:nth-child(1)')
+      await this.page.waitForSelector('button.s111:nth-child(1)')
       await this.page.waitForTimeout(1000)
-      await this.page.click('button.s11189:nth-child(1)')
+      await this.page.click('button.s111:nth-child(1)')
       await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
       await this.page.waitForTimeout(1000)
       await this.page.type("[data-testid='UI_KIT_INPUT']", email.toString(),  { delay: 100 })
@@ -52,8 +51,29 @@ export default class Login {
       await this.page.waitForSelector("[data-testid='df93b370-5132-6be4-fbb2-632d6152a4e2']")
       await this.page.waitForTimeout(1000)
       await this.page.click("[data-testid='df93b370-5132-6be4-fbb2-632d6152a4e2']")
-
+      await this.page.waitForTimeout(7000)
+      const elements = await this.page.$$("div.s11212")
+      await elements[2].click()
+      
       }
+
+      async feelformnewuser() {
+        const email = generateRandomEmail()
+        await this.page.waitForTimeout(1000)
+        await this.page.waitForSelector('button.s111:nth-child(1)')
+        await this.page.waitForTimeout(1000)
+        await this.page.click('button.s111:nth-child(1)')
+        await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
+        await this.page.waitForTimeout(1000)
+        await this.page.type("[data-testid='UI_KIT_INPUT']", email.toString(),  { delay: 80 })
+        await this.page.waitForSelector("[data-testid='auth-continue-button']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='auth-continue-button']")
+        await this.page.waitForTimeout(2000)
+        await this.page.waitForSelector("[data-testid='df93b370-5132-6be4-fbb2-632d6152a4e2']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='df93b370-5132-6be4-fbb2-632d6152a4e2']")        
+        }
 
     async logingoogle() {
       const { email, pass } = credential()

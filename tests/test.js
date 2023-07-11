@@ -7,6 +7,7 @@ import ProfilePage from '../package_for_tests/ProfilePage'
 import Saved from '../package_for_tests/Saved'
 import ShopingList from '../package_for_tests/ShoppingList'
 import AdsCheck from '../package_for_tests/AdsCheck'
+import ScreenShot from '../package_for_tests/ScreenShotCheck'
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
 
@@ -23,6 +24,7 @@ describe('END-to-END', ()=>{
     let saved
     let shopinglist
     let adscheck
+    let screenshot
 
 
     beforeAll(async () => {
@@ -42,6 +44,7 @@ describe('END-to-END', ()=>{
         saved = new Saved(page)
         shopinglist = new ShopingList(page)
         adscheck = new AdsCheck(page)
+        screenshot = new ScreenShot(page)
     })
     
     afterEach(async ()=> {
@@ -52,12 +55,12 @@ describe('END-to-END', ()=>{
     afterAll(async () => {
         await getBrowser().close();
     })
-/*
+
     it('LoginAsNew #1', async()=>{
         await login.visit()
         await login.feelformnewuser()
     }, 20000)
-
+/*
     it('LoginAsOld #2', async()=>{
         await login.visit()
         await login.feelformolduser()
@@ -275,90 +278,19 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformnewuser()
         await explore.addrecipeexplore()
-    }, 40000)*/
-/*
-    it('Ads Check on HomeFeed #37', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
     }, 40000)
 
-    it('Ads Check on HomeFeed #38', async()=>{
+    it('Screen Shot Main Page #37', async()=>{
         await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
+        await screenshot.screenShotMainPage()
     }, 40000)
 
-    it('Ads Check on HomeFeed #39', async()=>{
+    it('Screen Shot Profile Page #38', async()=>{
         await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #40', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #41', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #42', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #43', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #44', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #45', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #46', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #47', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #48', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #49', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
-    }, 40000)
-
-    it('Ads Check on HomeFeed #50', async()=>{
-        await login.visit()
-        await login.feelformnewuser()
-        await adscheck.adsCheckOnHF()
+        await login.feelformolduser()
+        await profilepage.profilepageview()
+        const result = await screenshot.screenShotProfilePage()
+        expect(result).toBe(true)
     }, 40000)*/
 })
 

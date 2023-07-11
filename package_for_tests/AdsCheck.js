@@ -107,17 +107,15 @@ export default class AdsCheck {
     }
 
     async adsCheckOnRecipetop() {
-        await this.page.waitForTimeout(3000)
+        await this.page.waitForTimeout(4000)
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
-
-        await this.page.waitForSelector("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']:nth-child(1)")
-        await this.page.waitForTimeout(1000)
-        await this.page.click("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']:nth-child(1)")
+        await this.page.waitForTimeout(2000)
+        const elements = await this.page.$$("[data-testid='img']")
+        await elements[0].click()
         
         await this.page.waitForTimeout(10000)
-
         const evpage = await this.page.$("#banner-logo.GoogleActiveViewElement")
 
 
@@ -129,13 +127,16 @@ export default class AdsCheck {
     }
 
     async adsCheckOnRecipemid() {
+        await this.page.waitForTimeout(4000)
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
-        await this.page.evaluate(() => {
-            window.scrollBy(0, window.innerHeight);
-          })
-        await this.page.waitForTimeout(10000)
+        await this.page.waitForTimeout(2000)
+        const elements = await this.page.$$("[data-testid='img']")
+        await elements[0].click()
+
+
+
 
         const evpage = await this.page.$(".i-amphtml-fill-content.i-amphtml-replaced-content[alt='']")
 
@@ -148,12 +149,16 @@ export default class AdsCheck {
     }
 
     async adsCheckOnRecipedow() {
+        await this.page.waitForTimeout(4000)
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
-        await this.page.evaluate(() => {
-            window.scrollBy(0, window.innerHeight);
-          })
+        await this.page.waitForTimeout(2000)
+        const elements = await this.page.$$("[data-testid='img']")
+        await elements[0].click()
+
+
+        
         await this.page.waitForTimeout(10000)
 
         const evpage = await this.page.$(".i-amphtml-fill-content.i-amphtml-replaced-content[alt='']")

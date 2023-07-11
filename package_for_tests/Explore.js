@@ -48,24 +48,20 @@ export default class Explore {
         await this.page.waitForTimeout(1000)
     }
 
-        addrecipeexplore = async () => {
+
+      
+    async addrecipeexplore () {
+        await this.page.waitForTimeout(3000)
+        await this.page.waitForSelector(".s12027.s12366")
+        await this.page.waitForTimeout(1000)
+        await this.page.hover(".s12027.s12366")
+        await this.page.waitForTimeout(1000)
+        await this.page.waitForSelector("button.s11387:nth-child(1)")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("button.s11387:nth-child(1)")
         await this.page.waitForTimeout(2000)
-        
-        const testfunc = (a) => a
-        const content = await this.page.evaluate(testfunc, 10);
-/*
         const elements = await this.page.$$("[data-testid='bookmark']")
         await elements[0].click()
         await this.page.waitForTimeout(1000)
-        await this.page.waitForSelector('div.s289.s81')
-        await this.page.waitForTimeout(1000)
-        await this.page.click("button.s11186.s11194.s11195-46.s12905")
-        await this.page.waitForTimeout(1000)*/
-
-    }
-
-
-
-
-    
+    }    
 }
