@@ -27,8 +27,8 @@ describe('Whisk test suite', ()=>{
     let screenshot
 
     beforeAll(async () => {
-        await initBrowser();
-    })
+        await initBrowser()
+    }, 30000)
 
     beforeEach(async ()=> {
         context = await getBrowser().createIncognitoBrowserContext();
