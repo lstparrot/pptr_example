@@ -20,7 +20,7 @@ async screenShotMainPage() {
   // Сравнить изображения и сохранить различия в буфере
   const diffPixels = pixelmatch(screenshotImage.data, referenceImage.data, diffImage.data, screenshotImage.width, screenshotImage.height, { threshold: 0.1 })
   // Сохранить различия в файле
-  const diffImagePath = 'diff.png';
+  const diffImagePath = 'images/diff.png';
   fs.writeFileSync(diffImagePath, PNG.sync.write(diffImage));
   //console.log(`Количество различий: ${diffPixels}`);
 }

@@ -67,10 +67,12 @@ export default class ShopingList {
         await this.page.waitForTimeout(2000)
         const elements3 = await this.page.$$("[data-testid='shopping-list-item']")
         const elementCountAfter = elements3.length
+        await this.page.waitForTimeout(1000)
 
         await this.page.waitForSelector("[data-testid='vertical-dots-shopping-list-button']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='vertical-dots-shopping-list-button']")
+        await this.page.waitForTimeout(1000)
 
         await this.page.waitForSelector("[data-testid='shopping-list-clear-list-menu-button']")
         await this.page.waitForTimeout(1000)

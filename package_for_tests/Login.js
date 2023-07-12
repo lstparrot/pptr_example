@@ -33,6 +33,7 @@ export default class Login {
       await this.page.waitForTimeout(4000)
       const elements = await this.page.$$("button.s11200")
       await elements[2].click()
+      await this.page.waitForTimeout(4000)
     }
 
     async feelformnewusercookie() {

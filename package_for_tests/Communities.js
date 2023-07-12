@@ -16,10 +16,10 @@ export default class Communities {
 
     async newcommcreate() {
         const namecom = generateRandomNameCommunities()
-        await this.page.waitForTimeout(3000)
-        await this.page.waitForSelector("a.s12235.s564[href='/communities']")
         await this.page.waitForTimeout(2000)
-        await this.page.click("a.s12235.s564[href='/communities']")
+        await this.page.waitForSelector("[href='/communities']")
+        await this.page.waitForTimeout(2000)
+        await this.page.click("[href='/communities']")
         await this.page.waitForTimeout(1000)
         await this.page.waitForSelector("[data-testid='home-fab-button']")
         await this.page.waitForTimeout(1000)
@@ -31,40 +31,51 @@ export default class Communities {
         await this.page.waitForTimeout(1000)
         const [fileInput] = await Promise.all([this.page.waitForFileChooser(), this.page.click("[data-testid='new-community-add-photo']")])
         await fileInput.accept(['./images/ParCort.png'])
-        await this.page.waitForSelector("button.s11.s11232.s11238")
         await this.page.waitForTimeout(1000)
-        await this.page.click("button.s11.s11232.s11238")
-        await this.page.waitForSelector("label.s11262.s12776")
-        const elementsradio = await this.page.$$("label.s11262.s12776")
+        await this.page.waitForSelector("[data-testid='da6c1152-0c36-603a-00f7-4991e01449af']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[data-testid='da6c1152-0c36-603a-00f7-4991e01449af']")
+
+        await this.page.waitForSelector("label.s11232")
+        const elementsradio = await this.page.$$("label.s11232")
         await this.page.waitForTimeout(2000)
         await elementsradio[1].click()
-        await this.page.waitForSelector("[data-testid='UI_KIT_INPUT_ICON']")
+        await elementsradio[2].click()
+
+        await this.page.waitForSelector("[data-testid='UI_KIT_TEXTAREA']")
         await this.page.waitForTimeout(2000)
-        await this.page.click("[data-testid='UI_KIT_INPUT_ICON']")
-        const elements = await this.page.$$("div.s12537")
-        await elements[0].click()
-        await this.page.waitForSelector("button.s11.s11232.s11240")
+        await this.page.type("[data-testid='UI_KIT_TEXTAREA']", namecom.toString())
         await this.page.waitForTimeout(1000)
-        await this.page.click("button.s11.s11232.s11240")
-        await this.page.waitForTimeout(2000)
-        await this.page.waitForSelector("button.s11.s11232.s11236.s11238")
+        const elements = await this.page.$$("[data-testid='UI_KIT_INPUT']")
+        await elements[1].click()
+        await this.page.waitForSelector("label.s11277.s12536")
         await this.page.waitForTimeout(1000)
-        await this.page.click("button.s11.s11232.s11236.s11238")
+
+        const elements1 = await this.page.$$("label.s11277.s12536")
+        await elements1[0].click()
+
+        await this.page.waitForTimeout(1000)
+        await this.page.waitForSelector("[form='community-form-modal']")
+        await this.page.waitForTimeout(1000)
+        await this.page.click("[form='community-form-modal']")
+        await this.page.waitForTimeout(4000)
+        await this.page.waitForSelector("[data-testid='add-recipes-to-community-modal']")
+        
     }
 
     async communitiesjoin() {
         await this.page.waitForTimeout(5000)
-        await this.page.waitForSelector("a.s12235.s564[href='/communities']")
+        await this.page.waitForSelector("[href='/communities']")
         await this.page.waitForTimeout(2000)
-        await this.page.click("a.s12235.s564[href='/communities']")
+        await this.page.click("[href='/communities']")
         await this.page.waitForTimeout(2000)
-        const elements = await this.page.$$("div.s11392 .s11395 .s11778")
+        const elements = await this.page.$$(".s12248")
         const elementCountBefore = elements.length
         await this.page.waitForTimeout(3000)
-        const elementsthree = await this.page.$$("div.s12156 [data-testid='community-join-button']")
-        await elementsthree[10].click()
+        const elementsthree = await this.page.$$("[data-testid='community-join-button']")
+        await elementsthree[1].click()
         await this.page.waitForTimeout(2000)
-        const elementstwo = await this.page.$$("div.s11392 .s11395 .s11778");
+        const elementstwo = await this.page.$$(".s12248");
         const elementCountAfter = elementstwo.length
         if (elementCountAfter === elementCountBefore + 1) {
             return true

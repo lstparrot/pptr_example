@@ -22,9 +22,9 @@ export default class Explore {
         await this.page.type("[data-testid='bee27b3b-d380-492e-3304-58c89c5f56bd']", 'test')
         await this.page.keyboard.press('Enter')
         await this.page.waitForTimeout(2000)
-        await this.page.waitForSelector("[data-testid='bookmark']:nth-child(1)")
+        const elements = await this.page.$$("a.s10062.s10155.s10272")
         await this.page.waitForTimeout(1000)
-        await this.page.click("[data-testid='bookmark']:nth-child(1)")
+        await elements[0].click()
         await this.page.waitForTimeout(1000)
     }
 

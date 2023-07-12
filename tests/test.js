@@ -55,7 +55,7 @@ describe('END-to-END', ()=>{
     afterAll(async () => {
         await getBrowser().close();
     })
-/*
+
     it('Login as new user #1', async()=>{
         await login.visit()
         await login.feelformnewusercookie()
@@ -103,20 +103,20 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestfirst()
-    }, 60000)*/
+    }, 60000)
 
     it('Search recipe save #10', async()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestsecond()
     }, 60000)
-/*
+
     it('Search list result #11', async()=>{
         await login.visit()
         await login.feelformolduser()
         await explore.exploretestresultlist()
-    }, 60000)*/
-/*
+    }, 60000)
+
     it('Communities user check #12', async()=>{
         await login.visit()
         await login.feelformolduser()
@@ -146,24 +146,28 @@ describe('END-to-END', ()=>{
     it('MP Clear #16', async()=>{
         await login.visit()
         await login.feelformolduser()
+        await planner.planneraddrecipe()
         await planner.plannerclear()
     }, 60000)
 
     it('MP Sharing #17', async()=>{
         await login.visit()
         await login.feelformolduser()
+        await planner.planneraddrecipe()
         await planner.plannerenablesharing()
     }, 60000)
 
     it('MP FeedBack #18', async()=>{
         await login.visit()
         await login.feelformolduser()
+        await planner.planneraddrecipe()
         await planner.plannerfeedback()
     }, 60000)
 
     it('MP import to SL #19', async()=>{
         await login.visit()
         await login.feelformolduser()
+        await planner.planneraddrecipe()
         await planner.plannerimport()
     }, 60000)
 
@@ -177,7 +181,7 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await profilepage.profileedit()
-    }, 60000)
+    }, 80000)
 
     it('Profile page edit Email #22', async()=>{
         await login.visit()
@@ -235,14 +239,12 @@ describe('END-to-END', ()=>{
         await login.visit()
         await login.feelformolduser()
         await adscheck.adsCheckOnMp()
-        
     }, 60000)
 
     it('Ads Check on SL #31', async()=>{
         await login.visit()
         await login.feelformolduser()
         await adscheck.adsCheckOnSl()
-        
     }, 60000)
 
     it('Ads Check on HomeFeed #32', async()=>{
@@ -291,6 +293,6 @@ describe('END-to-END', ()=>{
         await profilepage.profilepageview()
         const result = await screenshot.screenShotProfilePage()
         expect(result).toBe(true)
-    }, 60000)*/
+    }, 60000)
 })
 

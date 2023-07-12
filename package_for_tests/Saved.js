@@ -15,9 +15,9 @@ export default class Saved {
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
 
-        await this.page.waitForSelector("button.s11.s11380")
+        await this.page.waitForSelector("[data-testid='create-new-button']")
         await this.page.waitForTimeout(1000)
-        await this.page.click("button.s11.s11380")
+        await this.page.click("[data-testid='create-new-button']")
 
         await this.page.waitForSelector("[data-testid='create-recipe-button']")
         await this.page.waitForTimeout(1000)
@@ -25,7 +25,7 @@ export default class Saved {
 
         await this.page.waitForTimeout(3000)
         const elements = await this.page.$$("[data-testid='UI_KIT_INPUT']")
-        await elements[0].type(namecom)
+        await elements[0].type(namecom,  { delay: 100 })
         await elements[1].type("1")
         await elements[2].type("1")
         await elements[3].type("1")
@@ -64,15 +64,15 @@ export default class Saved {
         await this.page.click("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(2000)
 
-        const elementsBefore = await this.page.$$("[data-testid='77fc4d72-81d3-d76c-ab71-8aa114e4cc8d'] .s11717[data-testid='img']")
+        const elementsBefore = await this.page.$$("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']")
         await this.page.waitForTimeout(2000)
-        const elements2 = await this.page.$$("input.s12068")
+        const elements2 = await this.page.$$("input.s12150:nth-child(2)")
         await elements2[1].click()
         await elements2[1].type("ysu5469jms")
         await this.page.waitForTimeout(1000)
         await this.page.keyboard.press('Enter')
         await this.page.waitForTimeout(2000)
-        const elementsAfter = await this.page.$$("[data-testid='77fc4d72-81d3-d76c-ab71-8aa114e4cc8d'] .s11717[data-testid='img']")
+        const elementsAfter = await this.page.$$("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']")
         if (elementsAfter !== elementsBefore) {
           return true
         }
@@ -94,7 +94,7 @@ export default class Saved {
         await this.page.click("[data-testid='a06215b9-86ad-0e32-c978-0a4d937d98d4']")
 
         await this.page.waitForSelector("[data-testid='UI_KIT_INPUT']")
-        await this.page.type("[data-testid='UI_KIT_INPUT']", namecom)
+        await this.page.type("[data-testid='UI_KIT_INPUT']", namecom,  { delay: 100 })
 
         await this.page.waitForSelector("[data-testid='new-collection-add-button']")
         await this.page.waitForTimeout(1000)

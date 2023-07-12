@@ -8,7 +8,7 @@ let browser;
 const initBrowser = async () => {
   browser = await puppeteer.launch({
     //slowMo: 250,
-    headless: false,
+    headless: true,
     //args: ['--incognito'],
     ignoreDefaultArgs: 
     ['--enable-automation', 
