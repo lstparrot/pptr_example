@@ -57,6 +57,7 @@ export default class ProfilePage {
         await elements[1].press('Backspace')
         await elements[1].type(namecom.toString())
         await this.page.waitForTimeout(1000)
+        
         await this.page.waitForSelector("[data-testid='UI_KIT_TEXTAREA']")
         await this.page.waitForTimeout(1000)
         await this.page.type("[data-testid='UI_KIT_TEXTAREA']", namecom.toString())
@@ -69,6 +70,7 @@ export default class ProfilePage {
         await elementsuikit[3].click({ clickCount: 3 })
         await elementsuikit[3].press('Backspace')
         await elementsuikit[3].type("www.example.com",  { delay: 100 })
+
         await this.page.waitForSelector("button.s11200.s11207.s11209:nth-child(2)")
         await this.page.waitForTimeout(1000)
         await this.page.click("button.s11200.s11207.s11209:nth-child(2)")
@@ -80,6 +82,7 @@ export default class ProfilePage {
         await elementsuikit2[3].click({ clickCount: 3 })
         await elementsuikit2[3].press('Backspace')
         await elementsuikit2[3].type("www.example.com",  { delay: 100 })
+
         await this.page.waitForSelector("button.s11200.s11207.s11209:nth-child(2)")
         await this.page.waitForTimeout(1000)
         await this.page.click("button.s11200.s11207.s11209:nth-child(2)")
@@ -91,6 +94,7 @@ export default class ProfilePage {
         await elementsuikit3[3].click({ clickCount: 3 })
         await elementsuikit3[3].press('Backspace')
         await elementsuikit3[3].type("www.youtube.com/test",  { delay: 100 })
+
         await this.page.waitForSelector("button.s11200.s11207.s11209:nth-child(2)")
         await this.page.waitForTimeout(1000)
         await this.page.click("button.s11200.s11207.s11209:nth-child(2)")
@@ -102,6 +106,7 @@ export default class ProfilePage {
         await elementsuikit4[3].click({ clickCount: 3 })
         await elementsuikit4[3].press('Backspace')
         await elementsuikit4[3].type("www.example.com",  { delay: 100 })
+
         await this.page.waitForSelector("button.s11200.s11207.s11209:nth-child(2)")
         await this.page.waitForTimeout(1000)
         await this.page.click("button.s11200.s11207.s11209:nth-child(2)")
@@ -146,6 +151,7 @@ export default class ProfilePage {
         await elements[1].click({ clickCount: 3 })
         await elements[1].press('Backspace')
         await elements[1].type(passold.toString(),  { delay: 100 })
+
         await this.page.waitForSelector("[data-testid='email-options-save-button']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='email-options-save-button']")
@@ -165,6 +171,7 @@ export default class ProfilePage {
         await elements2[1].type(passold.toString(),  { delay: 100 })
         await this.page.waitForSelector("[data-testid='email-options-save-button']")
         await this.page.waitForTimeout(1000)
+
         await this.page.click("[data-testid='email-options-save-button']")
         await this.page.waitForTimeout(1000)
         await this.page.waitForSelector("[data-testid='account-modal']")

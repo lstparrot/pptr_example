@@ -11,7 +11,7 @@ import ScreenShot from '../package_for_tests/ScreenShotCheck'
 
 const { initBrowser, getBrowser } = require('../puppeteerInstance');
 
-describe('END-to-END', ()=>{
+describe('Whisk test suite', ()=>{
 
     let login
     let homefeed
@@ -26,7 +26,6 @@ describe('END-to-END', ()=>{
     let adscheck
     let screenshot
 
-
     beforeAll(async () => {
         await initBrowser();
     })
@@ -35,6 +34,7 @@ describe('END-to-END', ()=>{
         context = await getBrowser().createIncognitoBrowserContext();
         page = await context.newPage();
         await page.setCacheEnabled(false)
+
         login = new Login(page)
         homefeed = new HomeFeed(page)
         explore = new Explore(page)
@@ -50,7 +50,6 @@ describe('END-to-END', ()=>{
     afterEach(async ()=> {
         await page.close()
     })
-
 
     afterAll(async () => {
         await getBrowser().close();

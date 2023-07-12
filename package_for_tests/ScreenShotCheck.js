@@ -46,10 +46,7 @@ async screenShotProfilePage() {
 
     if (diffPixels > diffThreshold) {
         return false
-  }
+    }
         return true
-}
-
-
-
+  }
 }

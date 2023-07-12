@@ -1,3 +1,4 @@
+
 export default class AdsCheck {
 
     constructor(page) {
@@ -65,6 +66,7 @@ export default class AdsCheck {
         await this.page.waitForSelector("button.s11200.s11209")
         await this.page.waitForTimeout(1000)
         await this.page.click("button.s11200.s11209")
+
         await this.page.waitForTimeout(1000)
         await elements[5].click()
 
@@ -85,16 +87,15 @@ export default class AdsCheck {
         await this.page.click("button.s11200.s11209")
 
         await this.page.waitForTimeout(1000)
-
     }
     async adsCheckOnHF() {
         await this.page.waitForSelector("[data-testid='home-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='home-nav-link']")
+
         await this.page.waitForTimeout(10000)
 
         const evpage = await this.page.$("div.s12124.s185")
-
 
         if (evpage !== "" && evpage !== null && evpage !== undefined) {
             return true
@@ -108,13 +109,13 @@ export default class AdsCheck {
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
+
         await this.page.waitForTimeout(2000)
         const elements = await this.page.$$("[data-testid='img']")
         await elements[0].click()
         
         await this.page.waitForTimeout(10000)
         const evpage = await this.page.$("#banner-logo.GoogleActiveViewElement")
-
 
         if (evpage !== "" && evpage !== null && evpage !== undefined) {
             return true
@@ -128,15 +129,12 @@ export default class AdsCheck {
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
+
         await this.page.waitForTimeout(2000)
         const elements = await this.page.$$("[data-testid='img']")
         await elements[0].click()
 
-
-
-
         const evpage = await this.page.$(".i-amphtml-fill-content.i-amphtml-replaced-content[alt='']")
-
 
         if (evpage !== "" && evpage !== null && evpage !== undefined) {
             return true
@@ -150,16 +148,13 @@ export default class AdsCheck {
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
+
         await this.page.waitForTimeout(2000)
         const elements = await this.page.$$("[data-testid='img']")
         await elements[0].click()
-
-
-        
         await this.page.waitForTimeout(10000)
 
         const evpage = await this.page.$(".i-amphtml-fill-content.i-amphtml-replaced-content[alt='']")
-
 
         if (evpage !== "" && evpage !== null && evpage !== undefined) {
             return true
@@ -167,11 +162,4 @@ export default class AdsCheck {
             return false
         }
     }
- 
-    
-
-
-
-
-    
 }

@@ -47,6 +47,7 @@ export default class Saved {
         await elements2[1].press('Enter')
         await elements2[2].type(namecom)
         await elements2[1].press('Enter')
+        
         await this.page.waitForTimeout(1000)
 
         await this.page.waitForSelector("[data-testid='new-recipe-save-button-small']")
@@ -66,12 +67,14 @@ export default class Saved {
 
         const elementsBefore = await this.page.$$("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']")
         await this.page.waitForTimeout(2000)
+
         const elements2 = await this.page.$$("input.s12150:nth-child(2)")
         await elements2[1].click()
         await elements2[1].type("ysu5469jms")
         await this.page.waitForTimeout(1000)
         await this.page.keyboard.press('Enter')
         await this.page.waitForTimeout(2000)
+
         const elementsAfter = await this.page.$$("[data-testid='7d086b69-b73b-a8d2-9244-b1faaae5ae23']")
         if (elementsAfter !== elementsBefore) {
           return true
@@ -85,6 +88,7 @@ export default class Saved {
         await this.page.waitForSelector("[data-testid='recipe-box-nav-link']")
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='recipe-box-nav-link']")
+
         await this.page.waitForTimeout(2000)
         const elementsBefore = await this.page.$$("[data-testid='6db6eada-0dd8-e48d-6249-9671497382f3']")
         const elementCountBefore = elementsBefore.length
@@ -100,17 +104,13 @@ export default class Saved {
         await this.page.waitForTimeout(1000)
         await this.page.click("[data-testid='new-collection-add-button']")
         await this.page.waitForTimeout(2000)
+
         const elementsAfter = await this.page.$$("[data-testid='6db6eada-0dd8-e48d-6249-9671497382f3']")
         const elementCountAfter = elementsAfter.length
 
         if (elementCountAfter === elementCountBefore +1) {
           return true
         }
-          return false
-        
-
-        
+          return false   
     }
-
-
 }
