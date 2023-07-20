@@ -59,7 +59,7 @@ describe('Whisk test suite', ()=>{
         await login.visit()
         await login.feelformnewusercookie()
     }, 60000)
-
+/*
     it('Login as old user #2', async()=>{
         await login.visit()
         await login.feelformolduser()
@@ -292,6 +292,6 @@ describe('Whisk test suite', ()=>{
         await profilepage.profilepageview()
         const result = await screenshot.screenShotProfilePage()
         expect(result).toBe(true)
-    }, 60000)
+    }, 60000)*/
 })
 

@@ -61,11 +61,12 @@ export default class Login {
       await this.page.waitForTimeout(1000)
       await this.page.click("[data-testid='df93b370-5132-6be4-fbb2-632d6152a4e2']")
 
-      await this.page.waitForTimeout(8000)
+      await this.page.waitForTimeout(7000)
       const elements = await this.page.$$("div.s11212")
       await elements[2].click()
-      
-      }
+
+    
+  }
 
       async feelformnewuser() {
         const email = generateRandomEmail()

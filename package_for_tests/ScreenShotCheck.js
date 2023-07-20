@@ -36,7 +36,7 @@ async screenShotProfilePage() {
     const diffImage = new PNG({ width: screenshotImage.width, height: screenshotImage.height });
     const diffPixels = pixelmatch(screenshotImage.data, referenceImage.data, diffImage.data, screenshotImage.width, screenshotImage.height, { threshold: 0.1 })
     
-    const diffImagePath = 'diff.png';
+    const diffImagePath = 'images/diff1.png';
 
     fs.writeFileSync(diffImagePath, PNG.sync.write(diffImage));
 
